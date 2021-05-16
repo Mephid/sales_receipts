@@ -1,3 +1,5 @@
+import decimalConverter from "../../lib/utils/decimalConverter"
+
 function addItem(state, payload) {
   const itemList = state.purchase_specs.item_list;
   const totPurchase = state.purchase_specs.tot_purchase;
@@ -27,7 +29,7 @@ function addItem(state, payload) {
   //Increase tot_purchase
   const newTotPurchase = () => {
     let newTot = +totPurchase + +payload.unit_price;
-    return (Math.round(newTot * 100) / 100).toFixed(2);
+    return decimalConverter(newTot);
   };
 
   return {

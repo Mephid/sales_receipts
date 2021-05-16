@@ -1,3 +1,5 @@
+//Display total amount of purchases
+
 import { usePurchase } from "../../context/Purchase";
 
 function Total() {

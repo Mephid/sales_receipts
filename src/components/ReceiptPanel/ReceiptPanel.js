@@ -1,3 +1,5 @@
+//Main receipt panel component
+
 import InputCustomer from "./InputCustomer";
 import ItemTable from "./ItemTable";
 import Controls from "./Controls";

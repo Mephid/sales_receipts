@@ -1,3 +1,5 @@
+// Main purchase panel component
+
 import ItemBtn from "./ItemBtn";
 import inventory from "./inventory";
 
