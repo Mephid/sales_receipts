@@ -29,4 +29,44 @@ module.exports = [
     desc: "Item-006",
     unit_price: "8.70",
   },
+  {
+    id: "007",
+    desc: "Item-007",
+    unit_price: "4.57",
+  },
+  {
+    id: "008",
+    desc: "Item-008",
+    unit_price: "8.90",
+  },
+  {
+    id: "009",
+    desc: "Item-009",
+    unit_price: "19.70",
+  },
+  {
+    id: "010",
+    desc: "Item-010",
+    unit_price: "12.30",
+  },
+  {
+    id: "011",
+    desc: "Item-011",
+    unit_price: "1.99",
+  },
+  {
+    id: "012",
+    desc: "Item-012",
+    unit_price: "8.21",
+  },
+  {
+    id: "013",
+    desc: "Item-013",
+    unit_price: "8.33",
+  },
+  {
+    id: "014",
+    desc: "Item-014",
+    unit_price: "48.21",
+  },
 ];

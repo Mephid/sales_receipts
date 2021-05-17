@@ -7,11 +7,14 @@ import Total from "./Total";
 
 function ReceiptPanel() {
   return (
-    <div id="receipt_panel">
+    <div
+      id="receipt_panel"
+      className="card flex-1 flex flex-col overflow-hidden max-w-full"
+    >
       <InputCustomer />
       <ItemTable />
-      <Controls />
       <Total />
+      <Controls />
     </div>
   );
 }

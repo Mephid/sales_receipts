@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  th {
+    @apply font-medium text-sm tracking-wider uppercase;
+  }
+  th,
+  td {
+    @apply px-4 py-3;
+  }
+  button {
+    @apply focus:outline-none;
+  }
+}
+
+@layer utilities {
+  .card {
+    @apply bg-white rounded shadow-md p-6;
+  }
+}

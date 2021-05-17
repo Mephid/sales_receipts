@@ -12,20 +12,21 @@ function App() {
   //Visibility state of Daily Sales
   const [isDSVisible, setDSVisible] = useState(false);
 
+  //CHANGE COLUMN RATIO
   return (
-    <div id="app_container">
+    <div id="app_container" className="bg-gray-100 h-screen w-screen p-6">
       <PurchaseProvider>
-        <div className="flex">
-          <div id="left-column" className="flex-1">
+        <div className="flex h-full">
+          <div className="h-full mr-2 flex flex-col">
             <ReceiptPanel />
             <DBControls setDSVisible={setDSVisible} />
           </div>
-          <div id="right-column" className="flex-1">
+          <div className="">
             <PurchasePanel />
           </div>
         </div>
       </PurchaseProvider>
-      {isDSVisible && <DailySales />}
+      {isDSVisible && <DailySales setVisibility={setDSVisible} />}
     </div>
   );
 }
