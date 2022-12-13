@@ -10,6 +10,7 @@ export const initialState = {
     tot_purchase: 0,
   },
   history: [],
+  showDS: false,
 };
 
 function PurchaseProvider({ children }) {

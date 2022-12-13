@@ -2,6 +2,7 @@ import ReceiptPanel from "../components/ReceiptPanel";
 import PurchasePanel from "../components/PurchasePanel";
 import DBControls from "../components/DBControls";
 import { PurchaseProvider } from "../context/Purchase";
+import DailySales from "../components/DailySales";
 
 function MainView() {
   return (
@@ -15,6 +16,7 @@ function MainView() {
           <PurchasePanel />
         </div>
       </div>
+      <DailySales />
     </PurchaseProvider>
   );
 }

@@ -24,6 +24,8 @@ function purchase(state, action) {
       return initialState;
     case "ADD_CUSTOMER":
       return { ...state, customer: payload };
+    case "SHOW_DS":
+      return { ...state, showDs: !state.showDs };
     default:
       throw new Error(`${type} action is not valid`);
   }
