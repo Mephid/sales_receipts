@@ -1,3 +1,3 @@
-import ReceiptPanel from "./ReceiptPanel";
+import ReceiptPanelContainer from "./ReceiptPanelContainer";
 
-export default ReceiptPanel;
+export default ReceiptPanelContainer;

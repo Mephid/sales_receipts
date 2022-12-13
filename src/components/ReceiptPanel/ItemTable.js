@@ -1,10 +1,4 @@
-// Display purchased items
-
-import { usePurchase } from "../../context/Purchase";
-
-function ItemTable() {
-  const { purchase_specs } = usePurchase().state;
-
+function ItemTable({ purchaseSpecs }) {
   return (
     <div id="item_table" className="flex-1 overflow-auto">
       <div>
@@ -18,7 +12,7 @@ function ItemTable() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {purchase_specs.item_list.map(({ item_specs, quantity }, i) => (
+            {purchaseSpecs.item_list.map(({ item_specs, quantity }, i) => (
               <tr className="table_row" key={`row-${i}`}>
                 <td>{item_specs.desc}</td>
                 <td>{item_specs.id}</td>
