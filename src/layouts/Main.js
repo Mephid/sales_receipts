@@ -4,7 +4,7 @@ import DBControls from "../components/DBControls";
 import DailySales from "../components/DailySales";
 import { usePurchase } from "../context/Purchase";
 
-function MainView() {
+function MainLayout() {
   const { state: globalState } = usePurchase();
 
   return (
@@ -21,4 +21,4 @@ function MainView() {
   );
 }
 
-export default MainView;
+export default MainLayout;

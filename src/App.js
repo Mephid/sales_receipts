@@ -1,12 +1,11 @@
 import "./App.css";
 import { PurchaseProvider } from "./context/Purchase";
-
-import MainView from "./views/Main";
+import MainLayout from "./layouts/Main";
 
 function App() {
   return (
     <PurchaseProvider>
-      <MainView />
+      <MainLayout />
     </PurchaseProvider>
   );
 }
