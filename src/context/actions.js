@@ -5,3 +5,4 @@ export const addCustomer = (payload) => ({
   payload: payload || "Walk-in Customer",
 });
 export const showDS = () => ({ type: "SHOW_DS" });
+export const hideDS = () => ({ type: "HIDE_DS" });
