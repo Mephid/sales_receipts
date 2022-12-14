@@ -1,8 +1,8 @@
-import decimalConverter from "../../lib/utils/decimalConverter"
+import decimalConverter from "../../lib/utils/decimalConverter";
 
 function addItem(state, payload) {
-  const itemList = state.purchase_specs.item_list;
-  const totPurchase = state.purchase_specs.tot_purchase;
+  const itemList = state.specs.items;
+  const totPurchase = state.specs.total;
   const history = state.history;
 
   //Add item to item_list if not present, else updates quantity
@@ -34,11 +34,11 @@ function addItem(state, payload) {
 
   return {
     ...state,
-    purchase_specs: {
-      item_list: newItemList(),
-      tot_purchase: newTotPurchase(),
+    specs: {
+      items: newItemList(),
+      total: newTotPurchase(),
     },
-    history: [...history, state.purchase_specs],
+    history: [...history, state.specs],
   };
 }
 

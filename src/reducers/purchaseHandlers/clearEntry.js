@@ -1,8 +1,7 @@
 function clearEntry(state, initialState) {
   return {
     ...state,
-    purchase_specs:
-      state.history[state.history.length - 1] || initialState.purchase_specs,
+    specs: state.history[state.history.length - 1] || initialState.specs,
     history: state.history.slice(0, -1),
   };
 }

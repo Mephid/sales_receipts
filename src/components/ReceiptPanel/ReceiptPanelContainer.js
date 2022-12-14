@@ -1,22 +1,28 @@
 import ReceiptPanel from "./ReceiptPanel";
-import { usePurchase } from "../../context/Purchase";
 import { addReceiptToDB } from "../../lib/db";
 import moment from "moment";
-import { addCustomer, cancelAll, clearEntry } from "../../context/actions";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addCustomer,
+  cancelAll,
+  clearEntry,
+} from "../../reducers/purchaseSlice";
 
 function ReceiptPanelContainer() {
-  const { state: globalState, dispatch } = usePurchase();
+  const dispatch = useDispatch();
+  const customer = useSelector((state) => state.purchase.customer);
+  const purchaseSpecs = useSelector((state) => state.purchase.specs);
 
   const onCustomerNameSubmit = (inputCustomerName) => {
     dispatch(addCustomer(inputCustomerName));
   };
 
   const onCheckout = async () => {
-    if (globalState.purchase_specs.item_list.length > 0) {
+    if (purchaseSpecs.items.length > 0) {
       await addReceiptToDB({
-        customer: globalState.customer,
-        totPurchase: globalState.purchase_specs.tot_purchase,
-        itemList: globalState.purchase_specs.item_list,
+        customer: customer,
+        totPurchase: purchaseSpecs.total,
+        itemList: purchaseSpecs.items,
         date: moment().format("DD-MM-YYYY"),
         time: moment().format("hh:mm:ss"),
       });
@@ -31,9 +37,9 @@ function ReceiptPanelContainer() {
   const onCancelAll = () => dispatch(cancelAll());
 
   const receiptPanelProps = {
-    customerName: globalState.customer,
-    purchaseSpecs: globalState.purchase_specs,
-    totPurchase: globalState.purchase_specs.tot_purchase,
+    customerName: customer,
+    purchaseSpecs,
+    totPurchase: purchaseSpecs.total,
     onCustomerNameSubmit,
     onCheckout,
     onClearEntry,

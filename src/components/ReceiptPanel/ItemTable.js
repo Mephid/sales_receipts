@@ -12,7 +12,7 @@ function ItemTable({ purchaseSpecs }) {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {purchaseSpecs.item_list.map(({ item_specs, quantity }, i) => (
+            {purchaseSpecs.items.map(({ item_specs, quantity }, i) => (
               <tr className="table_row" key={`row-${i}`}>
                 <td>{item_specs.desc}</td>
                 <td>{item_specs.id}</td>

@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { hideDS } from "../../context/actions";
-import { usePurchase } from "../../context/Purchase";
 import DailySales from "./DailySales";
 import * as db from "../../lib/db";
+import { useDispatch, useSelector } from "react-redux";
+import { hideDs } from "../../reducers/purchaseSlice";
 
 function DailySalesContainer() {
-  const { state: globalState, dispatch } = usePurchase();
+  const dispatch = useDispatch();
+  const showDS = useSelector((state) => state.purchase.showDS);
 
   const [isLoading, setIsLoading] = useState(false);
   const [dailySales, setDailySales] = useState([]);
 
   const handleShowDailySales = () => {
-    dispatch(hideDS());
+    dispatch(hideDs());
   };
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function DailySalesContainer() {
     };
 
     fetchSales();
-  }, [globalState.showDS]);
+  }, [showDS]);
 
   return (
     <DailySales

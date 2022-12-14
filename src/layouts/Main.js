@@ -2,10 +2,10 @@ import ReceiptPanel from "../components/ReceiptPanel";
 import PurchasePanel from "../components/PurchasePanel";
 import DBControls from "../components/DBControls";
 import DailySales from "../components/DailySales";
-import { usePurchase } from "../context/Purchase";
+import { useSelector } from "react-redux";
 
 function MainLayout() {
-  const { state: globalState } = usePurchase();
+  const showDS = useSelector((state) => state.purchase.showDS);
 
   return (
     <div id="app_container" className="bg-gray-100 h-screen w-screen p-6">
@@ -16,7 +16,7 @@ function MainLayout() {
         </div>
         <PurchasePanel />
       </div>
-      {globalState.showDS && <DailySales />}
+      {showDS && <DailySales />}
     </div>
   );
 }

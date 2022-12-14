@@ -1,12 +1,12 @@
-import { showDS } from "../context/actions";
-import { usePurchase } from "../context/Purchase";
+import { useDispatch } from "react-redux";
 import * as db from "../lib/db";
+import { showDs } from "../reducers/purchaseSlice";
 
 function DBControls() {
-  const { dispatch } = usePurchase();
+  const dispatch = useDispatch();
 
   const handleOpenDailySales = () => {
-    dispatch(showDS());
+    dispatch(showDs());
   };
 
   const handleClearAll = () => {

@@ -1,12 +1,13 @@
+import { Provider } from "react-redux";
 import "./App.css";
-import { PurchaseProvider } from "./context/Purchase";
 import MainLayout from "./layouts/Main";
+import store from "./store";
 
 function App() {
   return (
-    <PurchaseProvider>
+    <Provider store={store}>
       <MainLayout />
-    </PurchaseProvider>
+    </Provider>
   );
 }
 
