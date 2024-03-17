@@ -1,11 +1,5 @@
 # Description
 
-The project is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a basic Point of Sale (POS) system developed as a demonstration for an interview.
 
-It uses [Dexie](https://dexie.org/) to simplify interactions with IndexedDB and [Tailwind](https://tailwindcss.com/) for styling.
-
-## Getting started
-
-Run `npm install` to install dependencies.
-
-Then `npm start` to start developement server.
+It's built using **React.js** and **Redux** for state management, styled with **Tailwind CSS**, and utilizes **IndexedDB** for local data storage.
